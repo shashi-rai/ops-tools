@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package v1;
+option go_package = "github.com/shashi-rai/ops-tools/pkg/api/v1";
+import "google/protobuf/timestamp.proto";
+
+service OpsService {
+    rpc GetStatus(OpsRequest) returns (OpsReply) {}
+}
+
+message OpsRequest {
+    string name = 1;
+}
+
+message OpsReply {
+    string message = 1;
+}
